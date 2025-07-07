@@ -8,7 +8,7 @@ import time
 import sqlite3
 import logging
 import pendulum
-from playsound import playsound
+#from playsound import playsound
 import threading
 import keyboard
 
@@ -546,7 +546,7 @@ class ScanningThread(QThread):
             def play_sound_async(sound_file, event):
                 """Функция для воспроизведения звука в отдельном потоке."""
                 time.sleep(0.5)  # Задержка в 100 миллисекунд перед воспроизведением
-                playsound(sound_file)
+                #playsound(sound_file)
                 event.set()  # Сигнализируем, что воспроизведение завершено
 
             def play_sound_and_wait(sound_file):
@@ -640,7 +640,7 @@ class ScanningThread(QThread):
                             time.sleep(2)
                             return False
 
-                        if not check_result(ftrdll.FTRSetParam(FTR_PARAM_MAX_FARN_REQUESTED, 200), "Установка параметра FARN"):
+                        if not check_result(ftrdll.FTRSetParam(FTR_PARAM_MAX_FARN_REQUESTED, 180), "Установка параметра FARN"):
                             ftrdll.FTRTerminate()
                             time.sleep(2)
                             return False

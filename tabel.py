@@ -15,8 +15,8 @@ from PyQt5.QtWidgets import QCheckBox, QComboBox, QTableWidget, QTableWidgetItem
 # Определяем путь к базе данных и логу
 
 DB_PATH = os.path.join(r"\\10.42.0.112\TimeTrackingSystem", "db", "employee_management.db")
-LOG_PATH = os.path.join("C:\TimeTrackingSystem", "logs", "timesheet_log.txt")
-DLL_PATH = os.path.join("C:\TimeTrackingSystem", "libs", "ftrapi.dll")
+LOG_PATH = os.path.join(r"C:\TimeTrackingSystem", "logs", "timesheet_log.txt")
+DLL_PATH = os.path.join(r"C:\TimeTrackingSystem", "libs", "ftrapi.dll")
 # Настроим логирование
 logging.basicConfig(
     filename=LOG_PATH,  # Файл для записи логов
@@ -736,7 +736,7 @@ class TimesheetWindow(QDialog):
         }
 
         # Создаем папку с названием года, если она не существует
-        directory_name = os.path.join("C:\TimeTrackingSystem", str(year))
+        directory_name = os.path.join(r"C:\TimeTrackingSystem", str(year))
         if not os.path.exists(directory_name):
             os.makedirs(directory_name)
 
